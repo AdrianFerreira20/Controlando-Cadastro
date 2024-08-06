@@ -1,0 +1,27 @@
+print('='*25)
+print('  CADASTRO DE PESSOAS')
+print('='*25)
+
+contMaiorIdade = 0
+contHomem = 0
+contMulher = 0
+
+while True:
+    sexo = str(input('Qual o seu gênero?[M/F] ')).upper()
+    while sexo not in 'MF':
+        sexo = str(input('Qual o seu gênero?[M/F] ')).upper()
+    idade = int(input('Qual a sua idade? '))
+    continuar = ' '
+    if idade > 18:
+        contMaiorIdade = contMaiorIdade + 1
+    if sexo == 'M':
+        contHomem = contHomem + 1
+    if sexo == 'F':
+        if idade < 20:
+            contMulher = contMulher + 1
+    while continuar not in 'SN':
+        continuar = str(input('Deseja cadastrar mais pessoas?[S/N] ')).upper()
+    if continuar == 'N':
+            break
+print(f'Foram cadastrados {contMaiorIdade} maiores de 18 anos, {contHomem} homens e '
+      f'{contMulher} mulheres abaixo dos 20 anos.')
